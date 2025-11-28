@@ -1,10 +1,10 @@
-#Transformada Discreta de Fourier (DFT)
+# Transformada Discreta de Fourier (DFT)
 
-    #¿QUÉ CAMBIAMOS?
+ # ¿QUÉ CAMBIAMOS?
 
 Cambiamos el nombre de la clase de TDF a TransformadaFourier y modificamos el constructor para que ahora reciba las muestras de la señal junto con la frecuencia de muestreo, en lugar de solo la frecuencia. Transformamos el método calcular() en el método interno _calcular_dft() que se ejecuta automáticamente al crear el objeto. Eliminamos por completo el cálculo de magnitudes, fases, separación de coeficientes pares/impares y el análisis espectral detallado. Renombramos variables: x por muestras, fs por frecuencia_muestreo, X por XK, y simplificamos el caso de prueba de una señal multicomponente compleja a una simple senoidal de 2Hz.
 
-    #¿POR QUÉ SE HICIERON ESTOS CAMBIOS?
+ # ¿POR QUÉ SE HICIERON ESTOS CAMBIOS?
 
 Los cambios se realizaron para adoptar un paradigma más orientado a objetos, donde la transformada se conceptualiza como una entidad con estado propio rather que como una calculadora utilitaria. La nueva nomenclatura busca mejorar la legibilidad y autodocumentación del código, haciendo que los nombres sean más descriptivos para desarrolladores que no estén familiarizados con el dominio. La eliminación de funcionalidades complejas respondió a una decisión de simplificación, enfocándose en el cálculo core de la DFT mientras se delega el análisis especializado a métodos futuros o clases derivadas, creando así una base más limpia y mantenible para extensiones posteriores.
 
@@ -48,3 +48,4 @@ if __name__ == "__main__":
     tf = TransformadaFourier(señal, fs)
 
     tf.mostrar_valores()
+
